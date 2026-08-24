@@ -127,7 +127,7 @@ h1 .hi{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .btn.solid{background:var(--grad);color:var(--acc-ink);border-color:transparent;font-weight:600}
 .btn.solid:hover{box-shadow:0 14px 34px -12px rgba(92,107,255,.65)}
 .btn.ghost:hover{background:var(--card);border-color:var(--line-2)}
-.hero-meta{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:54px;padding-top:26px;border-top:1px solid var(--line)}
+.hero-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 32px;margin-top:54px;padding-top:26px;border-top:1px solid var(--line)}
 .hero-meta div{padding:6px 0}
 .hero-meta b{display:block;font-family:var(--disp);font-size:21px;font-weight:700;letter-spacing:-.03em}
 .hero-meta span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
@@ -251,7 +251,7 @@ footer p{margin:0}
   .viz-frame{max-width:520px}
 }
 @media (max-width:1000px){
-  .hero-meta{grid-template-columns:repeat(3,1fr);gap:20px 22px}
+  .hero-meta{grid-template-columns:repeat(2,1fr);gap:22px}
 }
 @media (max-width:900px){
   .about{grid-template-columns:1fr;gap:32px}
@@ -325,12 +325,12 @@ footer p{margin:0}
           <span class="avail rv"><span class="dot"></span><span data-pt="Disponível para novos projetos" data-en="Available for new projects">Disponível para novos projetos</span></span>
 
           <h1 class="rv">
-            <span data-pt="Design de produto guiado por" data-en="Product design driven by">Design de produto guiado por</span>
-            <span class="hi" data-pt="evidência" data-en="evidence">evidência</span><span data-pt=", não por opinião." data-en=", not opinion.">, não por opinião.</span>
+            <span data-pt="Transformo problemas complexos em" data-en="I turn complex problems into">Transformo problemas complexos em</span>
+            <span class="hi" data-pt="interfaces simples" data-en="simple interfaces">interfaces simples</span>.
           </h1>
 
-          <p class="lede rv" data-pt="Sou <b>Lucas Queiroz</b>, Product Designer com mais de dez anos de atuação em design digital. Trabalho na interseção entre negócio, engenharia e usuário: conduzo descoberta, estruturo arquitetura de informação, construo design systems escaláveis e valido hipóteses em protótipo antes que elas virem custo de desenvolvimento." data-en="I'm <b>Lucas Queiroz</b>, a Product Designer with over ten years in digital design. I work at the intersection of business, engineering and the end user: running discovery, structuring information architecture, building scalable design systems, and validating hypotheses in prototype before they turn into development cost.">
-            Sou <b>Lucas Queiroz</b>, Product Designer com mais de dez anos de atuação em design digital. Trabalho na interseção entre negócio, engenharia e usuário: conduzo descoberta, estruturo arquitetura de informação, construo design systems escaláveis e valido hipóteses em protótipo antes que elas virem custo de desenvolvimento.
+          <p class="lede rv" data-pt="<b>Designer UX/UI e Product Designer</b>, com 5 anos dedicados à área dentro de uma trajetória de 10 anos em design. Crio fluxos, protótipos e interfaces que unem clareza visual, experiência do usuário e objetivo de negócio." data-en="<b>UX/UI and Product Designer</b>, with 5 years focused on the field within a 10-year design career. I create flows, prototypes and interfaces that bring together visual clarity, user experience and business goals.">
+            <b>Designer UX/UI e Product Designer</b>, com 5 anos dedicados à área dentro de uma trajetória de 10 anos em design. Crio fluxos, protótipos e interfaces que unem clareza visual, experiência do usuário e objetivo de negócio.
           </p>
 
           <div class="cta rv">
@@ -434,10 +434,11 @@ footer p{margin:0}
       </div>
 
       <div class="hero-meta rv">
-        <div><b>10+</b><span data-pt="Anos com design digital" data-en="Years in digital design">Anos com design digital</span></div>
+        <div><b>10</b><span data-pt="Anos de trajetória em design" data-en="Years in design">Anos de trajetória em design</span></div>
+        <div><b>5</b><span data-pt="Anos dedicados a UX/UI" data-en="Years focused on UX/UI">Anos dedicados a UX/UI</span></div>
         <div><b>50+</b><span data-pt="Projetos realizados" data-en="Projects delivered">Projetos realizados</span></div>
-        <div><b>Figma</b><span data-pt="Da pesquisa ao handoff" data-en="Research to handoff">Da pesquisa ao handoff</span></div>
-        <div><b data-pt="Eng. de Software" data-en="Software Eng." >Eng. de Software</b><span data-pt="UNAERP · conclusão 2026" data-en="UNAERP · class of 2026">UNAERP · conclusão 2026</span></div>
+        <div><b>Figma</b><span data-pt="Ferramenta principal" data-en="Main tool">Ferramenta principal</span></div>
+        <div><b data-pt="Eng. de Software" data-en="Software Eng.">Eng. de Software</b><span data-pt="UNAERP · conclusão 2026" data-en="UNAERP · class of 2026">UNAERP · conclusão 2026</span></div>
         <div><b>Ribeirão Preto</b><span data-pt="SP · presencial ou remoto" data-en="SP, Brazil · on-site or remote">SP · presencial ou remoto</span></div>
       </div>
     </div>
@@ -462,44 +463,64 @@ footer p{margin:0}
 
       <div class="about">
         <div class="rv">
-          <p data-pt="Minha atuação começa antes da primeira tela. Interface é consequência: antes de desenhar, é preciso saber qual problema justifica investimento, quem é impactado por ele e qual comportamento precisa mudar. Por isso participo da definição de escopo junto de produto e engenharia, e permaneço no projeto depois do handoff, acompanhando o que foi <strong>efetivamente construído</strong>." data-en="My work starts before the first screen. Interface is a consequence: before drawing anything, you need to know which problem justifies investment, who it affects, and which behaviour has to change. That's why I take part in scoping alongside product and engineering, and stay on the project past handoff, following what actually <strong>gets built</strong>.">Minha atuação começa antes da primeira tela. Interface é consequência: antes de desenhar, é preciso saber qual problema justifica investimento, quem é impactado por ele e qual comportamento precisa mudar. Por isso participo da definição de escopo junto de produto e engenharia, e permaneço no projeto depois do handoff, acompanhando o que foi <strong>efetivamente construído</strong>.</p>
-          <p data-pt="Trabalho com método. Conduzo entrevistas e testes de usabilidade, analiso dados de uso e mapeio o fluxo existente antes de propor alternativa. Desenho em componentes e Auto Layout desde o primeiro rascunho, porque <strong>design system não é entregável isolado</strong>. É a infraestrutura que permite ao time escalar sem perder consistência." data-en="I work with method. I run interviews and usability tests, analyse usage data, and map the existing flow before proposing an alternative. I design in components and Auto Layout from the first sketch, because <strong>a design system isn't a standalone deliverable</strong>. It's the infrastructure that lets a team scale without losing consistency.">Trabalho com método. Conduzo entrevistas e testes de usabilidade, analiso dados de uso e mapeio o fluxo existente antes de propor alternativa. Desenho em componentes e Auto Layout desde o primeiro rascunho, porque <strong>design system não é entregável isolado</strong>. É a infraestrutura que permite ao time escalar sem perder consistência.</p>
-          <p data-pt="Minha formação em Engenharia de Software sustenta a proximidade com quem constrói: compreendo restrição de implementação e discuto viabilidade técnica na mesma linguagem do time de desenvolvimento. Uma solução inviável de construir é uma solução que precisa ser revista." data-en="My Software Engineering background underpins how close I stay to the people who build: I understand implementation constraints and discuss technical feasibility in the same language as the engineering team. A solution that can't realistically be built is a solution that needs revisiting.">Minha formação em Engenharia de Software sustenta a proximidade com quem constrói: compreendo restrição de implementação e discuto viabilidade técnica na mesma linguagem do time de desenvolvimento. Uma solução inviável de construir é uma solução que precisa ser revista.</p>
-          <p data-pt="Incorporei <strong>inteligência artificial ao meu fluxo de trabalho</strong> como ferramenta de produtividade, não como substituto de critério. Uso IA para acelerar síntese de pesquisa, gerar variações de interface para comparação, produzir conteúdo realista de teste e transformar protótipo em código funcional com Claude Code. A decisão de design continua sendo minha; a IA encurta o caminho até poder testá-la." data-en="I've built <strong>artificial intelligence into my workflow</strong> as a productivity tool, not a replacement for judgement. I use AI to speed up research synthesis, generate interface variations for comparison, produce realistic test content, and turn prototypes into working code with Claude Code. The design decision stays mine; AI shortens the path to being able to test it.">Incorporei <strong>inteligência artificial ao meu fluxo de trabalho</strong> como ferramenta de produtividade, não como substituto de critério. Uso IA para acelerar síntese de pesquisa, gerar variações de interface para comparação, produzir conteúdo realista de teste e transformar protótipo em código funcional com Claude Code. A decisão de design continua sendo minha; a IA encurta o caminho até poder testá-la.</p>
-          <p data-pt="Busco atuar em times nos quais design participe da decisão de produto, e não apenas da execução, especialmente em produtos complexos: painéis operacionais, ferramentas internas e fluxos de alta frequência, onde uma decisão de interface bem fundamentada se converte em <strong>tempo economizado e erro evitado</strong>." data-en="I look for teams where design has a say in product decisions, not just execution, especially on complex products: operational dashboards, internal tools and high-frequency flows, where one well-reasoned interface decision converts directly into <strong>time saved and errors avoided</strong>.">Busco atuar em times nos quais design participe da decisão de produto, e não apenas da execução, especialmente em produtos complexos: painéis operacionais, ferramentas internas e fluxos de alta frequência, onde uma decisão de interface bem fundamentada se converte em <strong>tempo economizado e erro evitado</strong>.</p>
+          <p data-pt="Atuo há 4 anos como UX/UI Designer em agência, responsável pela criação de layouts no Figma: páginas iniciais, páginas internas e fluxos de navegação. Desenvolvo protótipos de todas as etapas, o que permite ao cliente <strong>visualizar e validar a experiência antes da implementação</strong>." data-en="For the past 4 years I've worked as a UX/UI Designer at an agency, responsible for creating layouts in Figma: home pages, inner pages and navigation flows. I prototype every stage, so clients can <strong>see and validate the experience before implementation</strong>.">Atuo há 4 anos como UX/UI Designer em agência, responsável pela criação de layouts no Figma: páginas iniciais, páginas internas e fluxos de navegação. Desenvolvo protótipos de todas as etapas, o que permite ao cliente <strong>visualizar e validar a experiência antes da implementação</strong>.</p>
+          <p data-pt="Como Product Designer, parto das necessidades do usuário e do negócio para propor melhorias, <strong>eliminar fricções</strong> e tornar o produto mais intuitivo e eficiente. Identificar o problema certo vem antes de desenhar a tela." data-en="As a Product Designer, I start from user and business needs to propose improvements, <strong>remove friction</strong> and make products more intuitive and efficient. Identifying the right problem comes before drawing the screen.">Como Product Designer, parto das necessidades do usuário e do negócio para propor melhorias, <strong>eliminar fricções</strong> e tornar o produto mais intuitivo e eficiente. Identificar o problema certo vem antes de desenhar a tela.</p>
+          <p data-pt="Estou concluindo a graduação em <strong>Engenharia de Software</strong> e tenho conhecimento prático de HTML, CSS, Python e Node.js. Isso amplia minha visão sobre viabilidade técnica, limitação de desenvolvimento e oportunidade de otimização durante a criação de cada interface." data-en="I'm finishing a <strong>Software Engineering</strong> degree and work hands-on with HTML, CSS, Python and Node.js. That widens my read on technical feasibility, development constraints and optimisation opportunities while designing each interface.">Estou concluindo a graduação em <strong>Engenharia de Software</strong> e tenho conhecimento prático de HTML, CSS, Python e Node.js. Isso amplia minha visão sobre viabilidade técnica, limitação de desenvolvimento e oportunidade de otimização durante a criação de cada interface.</p>
+          <p data-pt="Uso <strong>inteligência artificial como ferramenta de produtividade</strong> no meu fluxo, da síntese de pesquisa ao protótipo em código com Claude Code, sem abrir mão do critério de design." data-en="I use <strong>AI as a productivity tool</strong> in my workflow, from research synthesis to turning prototypes into code with Claude Code, without giving up design judgement.">Uso <strong>inteligência artificial como ferramenta de produtividade</strong> no meu fluxo, da síntese de pesquisa ao protótipo em código com Claude Code, sem abrir mão do critério de design.</p>
         </div>
 
         <div class="rv">
           <div class="tool-box">
+            <h3 data-pt="Design" data-en="Design">Design</h3>
+            <div class="chips">
+              <span class="chip" data-pt="Design UX" data-en="UX design">Design UX</span>
+              <span class="chip" data-pt="Design de interface" data-en="UI design">Design de interface</span>
+              <span class="chip" data-pt="Prototipagem de interfaces" data-en="Interface prototyping">Prototipagem de interfaces</span>
+              <span class="chip">Wireframes</span>
+              <span class="chip" data-pt="Design de layout" data-en="Layout design">Design de layout</span>
+              <span class="chip" data-pt="Fluxos de navegação" data-en="Navigation flows">Fluxos de navegação</span>
+              <span class="chip" data-pt="Apps mobile" data-en="Mobile apps">Apps mobile</span>
+              <span class="chip" data-pt="Design responsivo" data-en="Responsive design">Design responsivo</span>
+              <span class="chip" data-pt="Design system" data-en="Design systems">Design system</span>
+              <span class="chip" data-pt="Handoff e documentação" data-en="Handoff &amp; documentation">Handoff e documentação</span>
+            </div>
+          </div>
+          <div class="tool-box">
             <h3 data-pt="Ferramentas" data-en="Tools">Ferramentas</h3>
             <div class="chips">
-              <span class="chip">Figma</span><span class="chip">FigJam</span><span class="chip">Auto Layout</span>
-              <span class="chip">Variables &amp; Tokens</span><span class="chip">Dev Mode</span><span class="chip">Adobe XD</span>
-              <span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">After Effects</span>
-              <span class="chip">Cinema 4D</span><span class="chip">Maze</span><span class="chip">Notion</span>
+              <span class="chip" data-pt="Figma (avançado)" data-en="Figma (advanced)">Figma (avançado)</span>
+              <span class="chip">FigJam</span><span class="chip">Auto Layout</span>
+              <span class="chip">Variables &amp; Tokens</span><span class="chip">Dev Mode</span>
+              <span class="chip">Photoshop</span><span class="chip">Illustrator</span>
+              <span class="chip">After Effects</span><span class="chip">Premiere Pro</span><span class="chip">Cinema 4D</span>
+            </div>
+          </div>
+          <div class="tool-box">
+            <h3 data-pt="Base técnica" data-en="Technical foundation">Base técnica</h3>
+            <div class="chips">
+              <span class="chip">HTML</span><span class="chip">CSS</span>
+              <span class="chip">Python</span><span class="chip">Node.js</span>
+              <span class="chip" data-pt="Eng. de Software" data-en="Software Engineering">Eng. de Software</span>
+              <span class="chip" data-pt="Viabilidade técnica" data-en="Technical feasibility">Viabilidade técnica</span>
             </div>
           </div>
           <div class="tool-box">
             <h3 data-pt="IA aplicada ao design" data-en="AI in the design workflow">IA aplicada ao design</h3>
             <div class="chips">
-              <span class="chip">Claude Code</span><span class="chip">Claude</span><span class="chip">ChatGPT</span>
-              <span class="chip">Midjourney</span><span class="chip">Figma AI</span><span class="chip">Firefly</span>
-              <span class="chip" data-pt="Prototipagem assistida" data-en="AI-assisted prototyping">Prototipagem assistida</span>
+              <span class="chip">Claude Code</span><span class="chip">ChatGPT</span>
+              <span class="chip">Midjourney</span><span class="chip">Figma AI</span>
               <span class="chip" data-pt="Síntese de pesquisa" data-en="Research synthesis">Síntese de pesquisa</span>
-              <span class="chip" data-pt="Design to code" data-en="Design to code">Design to code</span>
+              <span class="chip">Design to code</span>
             </div>
           </div>
           <div class="tool-box">
-            <h3 data-pt="Competências" data-en="Capabilities">Competências</h3>
+            <h3 data-pt="Visão de produto" data-en="Product mindset">Visão de produto</h3>
             <div class="chips">
-              <span class="chip" data-pt="Pesquisa com usuário" data-en="User research">Pesquisa com usuário</span>
-              <span class="chip" data-pt="Arquitetura de informação" data-en="Information architecture">Arquitetura de informação</span>
-              <span class="chip" data-pt="Design system" data-en="Design systems">Design system</span>
-              <span class="chip" data-pt="Prototipagem de alta fidelidade" data-en="High-fidelity prototyping">Prototipagem de alta fidelidade</span>
-              <span class="chip" data-pt="Teste de usabilidade" data-en="Usability testing">Teste de usabilidade</span>
-              <span class="chip" data-pt="Acessibilidade (WCAG)" data-en="Accessibility (WCAG)">Acessibilidade (WCAG)</span>
-              <span class="chip" data-pt="Design responsivo" data-en="Responsive design">Design responsivo</span>
-              <span class="chip" data-pt="Handoff e documentação" data-en="Handoff &amp; documentation">Handoff e documentação</span>
+              <span class="chip" data-pt="Visão estratégica" data-en="Strategic thinking">Visão estratégica</span>
+              <span class="chip" data-pt="Inovação digital" data-en="Digital innovation">Inovação digital</span>
+              <span class="chip" data-pt="Estratégia de mídia" data-en="Media strategy">Estratégia de mídia</span>
+              <span class="chip" data-pt="Identidade visual" data-en="Visual identity">Identidade visual</span>
+              <span class="chip" data-pt="Edição de vídeo" data-en="Video editing">Edição de vídeo</span>
             </div>
           </div>
         </div>
@@ -650,24 +671,24 @@ footer p{margin:0}
         <div class="tl-item rv">
           <div class="tl-when" data-pt="Atuação atual" data-en="Current practice">Atuação atual</div>
           <div class="tl-body">
-            <h3>Product Designer</h3>
-            <p data-pt="Conduzo o ciclo completo de design de produto: descoberta com usuários e stakeholders, definição de escopo em conjunto com produto e engenharia, e entrega de fluxos, protótipos e componentes documentados. Mantenho e evoluo o design system, garantindo consistência entre plataformas e reduzindo retrabalho no desenvolvimento. Defendo decisões de design com pesquisa e dado, não com preferência estética." data-en="I lead the full product design cycle: discovery with users and stakeholders, scoping alongside product and engineering, and delivery of documented flows, prototypes and components. I maintain and evolve the design system, keeping platforms consistent and cutting rework in development. I back design decisions with research and data, not aesthetic preference.">Conduzo o ciclo completo de design de produto: descoberta com usuários e stakeholders, definição de escopo em conjunto com produto e engenharia, e entrega de fluxos, protótipos e componentes documentados. Mantenho e evoluo o design system, garantindo consistência entre plataformas e reduzindo retrabalho no desenvolvimento. Defendo decisões de design com pesquisa e dado, não com preferência estética.</p>
+            <h3>UX/UI Designer · Product Designer</h3>
+            <p data-pt="Criação de layouts no Figma, de páginas iniciais a páginas internas e fluxos de navegação, com protótipo em todas as etapas para o cliente validar antes da implementação. Como Product Designer, proponho melhorias a partir da necessidade do usuário e do negócio." data-en="Creating layouts in Figma, from home pages to inner pages and navigation flows, with prototypes at every stage so clients can validate before implementation. As a Product Designer, I propose improvements based on both user and business needs.">Criação de layouts no Figma, de páginas iniciais a páginas internas e fluxos de navegação, com protótipo em todas as etapas para o cliente validar antes da implementação. Como Product Designer, proponho melhorias a partir da necessidade do usuário e do negócio.</p>
           </div>
         </div>
 
         <div class="tl-item rv">
           <div class="tl-when" data-pt="Experiência" data-en="Experience">Experiência</div>
           <div class="tl-body">
-            <h3>UX/UI Designer</h3>
-            <p data-pt="Redesenho de fluxos críticos a partir de pesquisa qualitativa e teste de usabilidade, com foco em reduzir esforço cognitivo e taxa de erro. Consolidei interfaces dispersas em biblioteca de componentes no Figma, com tokens de cor, tipografia e espaçamento, e estruturei o handoff documentado que passou a orientar o time de desenvolvimento." data-en="Redesigned critical flows from qualitative research and usability testing, focused on reducing cognitive load and error rates. Consolidated scattered interfaces into a Figma component library with colour, type and spacing tokens, and set up the documented handoff the engineering team now works from.">Redesenho de fluxos críticos a partir de pesquisa qualitativa e teste de usabilidade, com foco em reduzir esforço cognitivo e taxa de erro. Consolidei interfaces dispersas em biblioteca de componentes no Figma, com tokens de cor, tipografia e espaçamento, e estruturei o handoff documentado que passou a orientar o time de desenvolvimento.</p>
+            <h3 data-pt="Designer em agências e escolas digitais" data-en="Designer at agencies and digital schools">Designer em agências e escolas digitais</h3>
+            <p data-pt="Identidades visuais e banners para campanhas publicitárias em agências de marketing e escolas digitais de idiomas. Foi onde aprendi a desenhar para um objetivo mensurável, não para agradar internamente." data-en="Visual identities and campaign banners for marketing agencies and digital language schools. This is where I learned to design against a measurable goal rather than to please internally.">Identidades visuais e banners para campanhas publicitárias em agências de marketing e escolas digitais de idiomas. Foi onde aprendi a desenhar para um objetivo mensurável, não para agradar internamente.</p>
           </div>
         </div>
 
         <div class="tl-item rv">
           <div class="tl-when" data-pt="Experiência" data-en="Experience">Experiência</div>
           <div class="tl-body">
-            <h3 data-pt="Designer de Interface · Projetos independentes" data-en="Interface Designer · Independent projects">Designer de Interface · Projetos independentes</h3>
-            <p data-pt="Sites, landing pages e aplicativos para clientes de segmentos distintos, atuando do briefing à entrega. Foi onde consolidei a prática de traduzir objetivo de negócio em requisito de interface e de sustentar decisão de design com argumento, e não com gosto pessoal. Trabalhar sem time de produto por trás me obrigou a assumir pesquisa, definição e validação por conta própria." data-en="Websites, landing pages and apps for clients across different sectors, from briefing to delivery. This is where I consolidated the practice of translating business goals into interface requirements and defending design decisions with reasoning rather than personal taste. Working without a product team behind me meant owning research, definition and validation myself.">Sites, landing pages e aplicativos para clientes de segmentos distintos, atuando do briefing à entrega. Foi onde consolidei a prática de traduzir objetivo de negócio em requisito de interface e de sustentar decisão de design com argumento, e não com gosto pessoal. Trabalhar sem time de produto por trás me obrigou a assumir pesquisa, definição e validação por conta própria.</p>
+            <h3 data-pt="UI para apps e sites · Freelance" data-en="UI for apps and websites · Freelance">UI para apps e sites · Freelance</h3>
+            <p data-pt="Projetos independentes de interface para aplicativos e sites, além de design gráfico e edição de vídeo. Atuação do briefing à entrega, assumindo sozinho pesquisa, definição e validação." data-en="Independent interface projects for apps and websites, plus graphic design and video editing. From briefing to delivery, owning research, definition and validation on my own.">Projetos independentes de interface para aplicativos e sites, além de design gráfico e edição de vídeo. Atuação do briefing à entrega, assumindo sozinho pesquisa, definição e validação.</p>
           </div>
         </div>
 
@@ -676,7 +697,7 @@ footer p{margin:0}
           <div class="tl-body">
             <h3 data-pt="Engenharia de Software" data-en="Software Engineering">Engenharia de Software</h3>
             <p class="org">UNAERP · Ribeirão Preto, SP</p>
-            <p data-pt="Graduação iniciada em janeiro de 2023, com conclusão prevista para o fim de 2026. A base técnica é parte central da minha forma de trabalhar: compreendo arquitetura de sistemas, restrição de implementação e custo de desenvolvimento, o que me permite propor soluções viáveis e conversar com engenharia sem intermediários." data-en="Degree started in January 2023, graduating at the end of 2026. That technical grounding is central to how I work: I understand system architecture, implementation constraints and development cost, which lets me propose feasible solutions and talk to engineering directly.">Graduação iniciada em janeiro de 2023, com conclusão prevista para o fim de 2026. A base técnica é parte central da minha forma de trabalhar: compreendo arquitetura de sistemas, restrição de implementação e custo de desenvolvimento, o que me permite propor soluções viáveis e conversar com engenharia sem intermediários.</p>
+            <p data-pt="Iniciada em janeiro de 2023, com conclusão prevista para o fim de 2026. Sustenta minha leitura de viabilidade técnica e a conversa direta com o time de desenvolvimento." data-en="Started in January 2023, graduating at the end of 2026. It underpins how I read technical feasibility and talk directly with the engineering team.">Iniciada em janeiro de 2023, com conclusão prevista para o fim de 2026. Sustenta minha leitura de viabilidade técnica e a conversa direta com o time de desenvolvimento.</p>
           </div>
         </div>
 
@@ -684,7 +705,7 @@ footer p{margin:0}
           <div class="tl-when" data-pt="Início de carreira" data-en="Early career">Início de carreira</div>
           <div class="tl-body">
             <h3 data-pt="Motion Design e Conteúdo Visual" data-en="Motion Design &amp; Visual Content">Motion Design e Conteúdo Visual</h3>
-            <p data-pt="Comecei há mais de dez anos produzindo aberturas e vinhetas para canais do YouTube em After Effects e Cinema 4D, e criando conteúdo visual para redes sociais: posts, carrosséis e peças de campanha. Foi a base da minha formação visual, hierarquia, ritmo, composição e clareza de mensagem, e onde entendi na prática que design é medido por retenção e reação de quem vê, não por elogio interno. Esse repertório de motion continua útil hoje: microinterações, transições de estado e prototipagem animada partem do mesmo raciocínio." data-en="I started out over ten years ago producing intros and stingers for YouTube channels in After Effects and Cinema 4D, and creating visual content for social media: posts, carousels and campaign assets. That was the foundation of my visual craft, hierarchy, rhythm, composition and message clarity, and where I learned first-hand that design is measured by how people respond to it, not by internal praise. That motion background still pays off: microinteractions, state transitions and animated prototyping come from the same reasoning.">Comecei há mais de dez anos produzindo aberturas e vinhetas para canais do YouTube em After Effects e Cinema 4D, e criando conteúdo visual para redes sociais: posts, carrosséis e peças de campanha. Foi a base da minha formação visual, hierarquia, ritmo, composição e clareza de mensagem, e onde entendi na prática que design é medido por retenção e reação de quem vê, não por elogio interno. Esse repertório de motion continua útil hoje: microinterações, transições de estado e prototipagem animada partem do mesmo raciocínio.</p>
+            <p data-pt="Aberturas e vinhetas para canais do YouTube em After Effects e Cinema 4D, e conteúdo para redes sociais. Base da minha formação visual em hierarquia, ritmo e composição, que hoje alimenta microinterações e transições de estado." data-en="Intros and stingers for YouTube channels in After Effects and Cinema 4D, plus social media content. The foundation of my visual craft in hierarchy, rhythm and composition, which now feeds microinteractions and state transitions.">Aberturas e vinhetas para canais do YouTube em After Effects e Cinema 4D, e conteúdo para redes sociais. Base da minha formação visual em hierarquia, ritmo e composição, que hoje alimenta microinterações e transições de estado.</p>
           </div>
         </div>
       </div>
