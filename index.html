@@ -50,15 +50,9 @@ a{color:inherit;text-decoration:none}
   transition:opacity .5s ease,visibility .5s;
 }
 #boot.done{opacity:0;visibility:hidden}
-.boot-inner{width:min(620px,100%);border:1px solid var(--line);border-radius:12px;background:var(--bg-2);overflow:hidden;box-shadow:0 40px 90px -30px rgba(155,124,255,.25)}
-.boot-head{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line)}
-.boot-head i{width:9px;height:9px;border-radius:50%;background:var(--line-2);display:block}
-.boot-head i:nth-child(1){background:#9B7CFF}
-.boot-head i:nth-child(2){background:#4D8CFF}
-.boot-head em{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--dim);margin-left:8px}
-#bootlog{margin:0;padding:18px 16px;min-height:212px;font-family:var(--mono);font-size:12px;line-height:1.85;color:var(--mut)}
-#bootlog div{opacity:0;transform:translateY(4px);animation:bootin .28s forwards}
-@keyframes bootin{to{opacity:1;transform:none}}
+#bootlog{margin:0;font-family:var(--mono);font-size:12.5px;line-height:2.1;color:var(--mut);width:min(360px,100%)}
+#bootlog div{opacity:0;animation:bootin .2s forwards}
+@keyframes bootin{to{opacity:1}}
 #bootlog .c{color:var(--tx)}
 #bootlog .c::before{content:"› ";color:var(--acc)}
 #bootlog .k{color:var(--acc);padding-left:14px}
@@ -66,9 +60,6 @@ a{color:inherit;text-decoration:none}
 #bootlog .v{color:var(--dim)}
 .caret{display:inline-block;width:7px;height:13px;background:var(--acc);vertical-align:-2px;animation:blink .9s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.boot-bar{height:2px;background:var(--line)}
-.boot-bar i{display:block;height:100%;width:0;background:var(--grad);transition:width .28s linear}
-.boot-skip{position:fixed;bottom:26px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 
 /* ================= HEADER ================= */
 header{
@@ -254,7 +245,7 @@ footer p{margin:0}
   section{padding:72px 0}
   .hero{padding:116px 0 56px}
   .marquee{margin-top:52px}
-  #bootlog{font-size:10.5px;min-height:186px}
+  #bootlog{font-size:11px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -267,14 +258,7 @@ footer p{margin:0}
 <canvas id="bgfx" aria-hidden="true"></canvas>
 
 <!-- ================= BOOT ================= -->
-<div id="boot">
-  <div class="boot-inner">
-    <div class="boot-head"><i></i><i></i><i></i><em>design-system · build</em></div>
-    <pre id="bootlog"></pre>
-    <div class="boot-bar"><i id="bootbar"></i></div>
-  </div>
-  <div class="boot-skip">clique para pular</div>
-</div>
+<div id="boot"><pre id="bootlog"></pre></div>
 
 <header id="hdr">
   <div class="wrap bar">
@@ -710,21 +694,15 @@ footer p{margin:0}
   /* ============ BOOT: digitação em tempo real ============ */
   /* cada linha = [classe, [ [texto, classeDoTrecho], ... ] ] */
   var BOOT = [
-    ["c", [["init design-system --project \"lucas-queiroz\"", ""]]],
-    ["k", [["tokens/color ", ""], ["#9B7CFF → #4D8CFF", "v"]]],
-    ["k", [["tokens/type  ", ""], ["Bricolage / Inter · escala 1.250", "v"]]],
-    ["k", [["tokens/grid  ", ""], ["base 8px · 4 breakpoints", "v"]]],
-    ["c", [["load research/entrevistas.json", ""], [" · 12 sessões", "v"]]],
-    ["c", [["build user-flow.fig", ""], [" · 24 telas · 61 componentes", "v"]]],
-    ["k", [["contraste WCAG AA ", ""], ["aprovado em 100% dos pares", "v"]]],
-    ["k", [["protótipo validado ", ""], ["pronto para handoff", "v"]]],
+    ["c", [["init design-system", ""]]],
+    ["k", [["tokens ", ""], ["grid 8px · WCAG AA", "v"]]],
+    ["c", [["build user-flow.fig", ""], [" · 24 telas", "v"]]],
     ["c", [["render portfolio", ""]]]
   ];
-  var CHAR_MS = 7, LINE_MS = 95;
+  var CHAR_MS = 6, LINE_MS = 70;
 
   var boot = document.getElementById("boot"),
       log  = document.getElementById("bootlog"),
-      bar  = document.getElementById("bootbar"),
       timers = [], finished = false;
 
   function endBoot(){
@@ -745,8 +723,7 @@ footer p{margin:0}
     function nextLine(){
       if(finished) return;
       if(li >= total){
-        bar.style.width = "100%";
-        timers.push(setTimeout(endBoot, 430));
+        timers.push(setTimeout(endBoot, 300));
         return;
       }
       var spec = BOOT[li], row = document.createElement("div");
@@ -760,7 +737,6 @@ footer p{margin:0}
         if(finished) return;
         if(si >= spec[1].length){
           li++;
-          bar.style.width = Math.round((li / total) * 100) + "%";
           timers.push(setTimeout(nextLine, LINE_MS));
           return;
         }
@@ -790,7 +766,7 @@ footer p{margin:0}
     document.addEventListener("keydown", function k(e){
       if(e.key === "Escape" || e.key === " "){ endBoot(); document.removeEventListener("keydown", k); }
     });
-    timers.push(setTimeout(typeBoot, 220));
+    timers.push(setTimeout(typeBoot, 130));
   }
 
   /* ============ FUNDO: partículas com parallax ============ */
