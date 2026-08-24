@@ -38,6 +38,27 @@ body::before{
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 #bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9}
+
+/* ---------- cursor personalizado (só em ponteiro fino) ---------- */
+#curDot,#curRing{display:none}
+@media (hover:hover) and (pointer:fine){
+  html.cur-on,html.cur-on *{cursor:none}
+  #curDot,#curRing{
+    display:block;position:fixed;top:0;left:0;z-index:9999;border-radius:50%;
+    pointer-events:none;opacity:0;will-change:transform;
+  }
+  html.cur-on #curDot,html.cur-on #curRing{opacity:1}
+  #curDot{width:6px;height:6px;background:var(--acc);transition:opacity .25s,width .2s,height .2s}
+  #curRing{
+    width:34px;height:34px;border:1px solid rgba(124,92,255,.5);
+    transition:width .28s cubic-bezier(.2,.7,.3,1),height .28s cubic-bezier(.2,.7,.3,1),
+               background .28s,border-color .28s,opacity .25s;
+  }
+  #curRing.hot{width:58px;height:58px;background:rgba(124,92,255,.13);border-color:rgba(124,92,255,.95)}
+  html.cur-hot #curDot{width:0;height:0}
+  #curRing.down{width:24px;height:24px;background:rgba(124,92,255,.22)}
+  html.cur-hide #curDot,html.cur-hide #curRing{opacity:0}
+}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--acc);color:var(--acc-ink)}
@@ -263,6 +284,7 @@ footer p{margin:0}
 <body>
 
 <canvas id="bgfx" aria-hidden="true"></canvas>
+<i id="curRing" aria-hidden="true"></i><i id="curDot" aria-hidden="true"></i>
 
 <!-- ================= BOOT ================= -->
 <div id="boot"><pre id="bootlog"></pre></div>
@@ -772,6 +794,50 @@ footer p{margin:0}
     });
     timers.push(setTimeout(typeBoot, 130));
   }
+
+  /* ============ CURSOR PERSONALIZADO ============ */
+  (function cursor(){
+    var fine = window.matchMedia && window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+    if(!fine) return;
+
+    var dot = document.getElementById("curDot"),
+        ring = document.getElementById("curRing"),
+        root = document.documentElement,
+        HOT = "a,button,.card,.chip,.step,.tl-item,.socials a,.lang button",
+        x = 0, y = 0, rx = 0, ry = 0, started = false, hot = false,
+        ease = reduce ? 1 : 0.19;
+
+    function place(el, px, py){
+      el.style.transform = "translate3d(" + px + "px," + py + "px,0) translate(-50%,-50%)";
+    }
+
+    document.addEventListener("pointermove", function(e){
+      if(e.pointerType && e.pointerType !== "mouse") return;
+      x = e.clientX; y = e.clientY;
+      if(!started){ started = true; rx = x; ry = y; root.classList.add("cur-on"); }
+      root.classList.remove("cur-hide");
+      place(dot, x, y);
+
+      var isHot = !!(e.target && e.target.closest && e.target.closest(HOT));
+      if(isHot !== hot){
+        hot = isHot;
+        ring.classList.toggle("hot", hot);
+        root.classList.toggle("cur-hot", hot);
+      }
+    }, {passive:true});
+
+    document.addEventListener("pointerdown", function(){ ring.classList.add("down"); }, {passive:true});
+    document.addEventListener("pointerup",   function(){ ring.classList.remove("down"); }, {passive:true});
+    document.addEventListener("mouseleave",  function(){ root.classList.add("cur-hide"); });
+    window.addEventListener("blur", function(){ root.classList.add("cur-hide"); });
+
+    (function loop(){
+      rx += (x - rx) * ease;
+      ry += (y - ry) * ease;
+      place(ring, rx, ry);
+      requestAnimationFrame(loop);
+    })();
+  })();
 
   /* ============ FUNDO: partículas com parallax ============ */
   (function particles(){
