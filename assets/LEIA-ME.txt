@@ -1,15 +1,17 @@
-Coloque aqui os screenshots dos projetos, exportados do Figma.
+Prints dos projetos.
 
-Nomes esperados pelo index.html:
-  projeto-01.png   (16:10 -> 1600x1000 px)
-  projeto-02.png   (16:10 -> 1600x1000 px)
-  projeto-03.png
-  projeto-04.png
-  projeto-05.png
-  projeto-06.png
+FLUXO
+  1. Exporte o frame no Figma em PNG 2x (ou tire o print) e salve aqui
+     como projeto-01.png ... projeto-06.png
+  2. Me avise. Eu redimensiono para 1600 px de largura, converto em
+     .jpg com qualidade 88 e atualizo o index.html
+  3. O .png fica so na sua maquina (esta no .gitignore). O que vai pro
+     ar e o .jpg, que costuma ficar ~90% menor
 
-Export no Figma: selecione o frame > painel Export > PNG > 2x > Export.
-Se o arquivo passar de ~500 KB, converta pra .webp e troque a extensao
-no index.html.
+PROPORCAO
+  Os cards usam 16:9. Print de site widescreen cai quase certinho.
+  O que sobrar e cortado pelas laterais, entao evite conteudo
+  importante colado na borda esquerda ou direita.
 
-Enquanto a imagem nao existir, o card mostra um placeholder.
+ENQUANTO NAO EXISTIR ARQUIVO
+  O card mostra um placeholder com o nome esperado.
