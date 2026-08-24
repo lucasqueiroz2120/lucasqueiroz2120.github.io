@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Lucas Queiroz — Product Designer</title>
+<title>Lucas Queiroz · Product Designer</title>
 <meta name="description" content="Portfólio de Lucas Queiroz, Product Designer UX/UI em Ribeirão Preto. Descoberta, arquitetura de informação, design system e validação por protótipo.">
 <meta name="theme-color" content="#07060D">
-<meta property="og:title" content="Lucas Queiroz — Product Designer">
+<meta property="og:title" content="Lucas Queiroz · Product Designer">
 <meta property="og:description" content="Design de produto guiado por evidência. Descoberta, arquitetura de informação, design system e validação por protótipo.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +37,7 @@ body::before{
   content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.04;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+#bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.9}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--acc);color:var(--acc-ink)}
@@ -259,6 +260,8 @@ footer p{margin:0}
 </head>
 <body>
 
+<canvas id="bgfx" aria-hidden="true"></canvas>
+
 <!-- ================= BOOT ================= -->
 <div id="boot">
   <div class="boot-inner">
@@ -418,8 +421,8 @@ footer p{margin:0}
 
     <div class="marquee rv">
       <div class="track">
-        <span>Design System</span><span>UX Research</span><span>Arquitetura de Informação</span><span>Prototipagem</span><span>Teste de Usabilidade</span><span>Design Tokens</span><span>Acessibilidade</span><span>Handoff</span>
-        <span>Design System</span><span>UX Research</span><span>Arquitetura de Informação</span><span>Prototipagem</span><span>Teste de Usabilidade</span><span>Design Tokens</span><span>Acessibilidade</span><span>Handoff</span>
+        <span>Design System</span><span>UX Research</span><span>Arquitetura de Informação</span><span>IA aplicada ao design</span><span>Prototipagem</span><span>Claude Code</span><span>Teste de Usabilidade</span><span>Design Tokens</span><span>Design to Code</span><span>Acessibilidade</span><span>Motion Design</span><span>Handoff</span>
+        <span>Design System</span><span>UX Research</span><span>Arquitetura de Informação</span><span>IA aplicada ao design</span><span>Prototipagem</span><span>Claude Code</span><span>Teste de Usabilidade</span><span>Design Tokens</span><span>Design to Code</span><span>Acessibilidade</span><span>Motion Design</span><span>Handoff</span>
       </div>
     </div>
   </section>
@@ -436,10 +439,11 @@ footer p{margin:0}
 
       <div class="about">
         <div class="rv">
-          <p data-pt="Minha atuação começa antes da primeira tela. Interface é consequência: antes de desenhar, é preciso saber qual problema justifica investimento, quem é impactado por ele e qual comportamento precisa mudar. Por isso participo da definição de escopo junto de produto e engenharia — e permaneço no projeto depois do handoff, acompanhando o que foi <strong>efetivamente construído</strong>." data-en="My work starts before the first screen. Interface is a consequence: before drawing anything, you need to know which problem justifies investment, who it affects, and which behaviour has to change. That's why I take part in scoping alongside product and engineering — and stay on the project past handoff, following what actually <strong>gets built</strong>.">Minha atuação começa antes da primeira tela. Interface é consequência: antes de desenhar, é preciso saber qual problema justifica investimento, quem é impactado por ele e qual comportamento precisa mudar. Por isso participo da definição de escopo junto de produto e engenharia — e permaneço no projeto depois do handoff, acompanhando o que foi <strong>efetivamente construído</strong>.</p>
-          <p data-pt="Trabalho com método. Conduzo entrevistas e testes de usabilidade, analiso dados de uso e mapeio o fluxo existente antes de propor alternativa. Desenho em componentes e Auto Layout desde o primeiro rascunho, porque <strong>design system não é entregável isolado</strong> — é a infraestrutura que permite ao time escalar sem perder consistência." data-en="I work with method. I run interviews and usability tests, analyse usage data, and map the existing flow before proposing an alternative. I design in components and Auto Layout from the first sketch, because <strong>a design system isn't a standalone deliverable</strong> — it's the infrastructure that lets a team scale without losing consistency.">Trabalho com método. Conduzo entrevistas e testes de usabilidade, analiso dados de uso e mapeio o fluxo existente antes de propor alternativa. Desenho em componentes e Auto Layout desde o primeiro rascunho, porque <strong>design system não é entregável isolado</strong> — é a infraestrutura que permite ao time escalar sem perder consistência.</p>
+          <p data-pt="Minha atuação começa antes da primeira tela. Interface é consequência: antes de desenhar, é preciso saber qual problema justifica investimento, quem é impactado por ele e qual comportamento precisa mudar. Por isso participo da definição de escopo junto de produto e engenharia, e permaneço no projeto depois do handoff, acompanhando o que foi <strong>efetivamente construído</strong>." data-en="My work starts before the first screen. Interface is a consequence: before drawing anything, you need to know which problem justifies investment, who it affects, and which behaviour has to change. That's why I take part in scoping alongside product and engineering, and stay on the project past handoff, following what actually <strong>gets built</strong>.">Minha atuação começa antes da primeira tela. Interface é consequência: antes de desenhar, é preciso saber qual problema justifica investimento, quem é impactado por ele e qual comportamento precisa mudar. Por isso participo da definição de escopo junto de produto e engenharia, e permaneço no projeto depois do handoff, acompanhando o que foi <strong>efetivamente construído</strong>.</p>
+          <p data-pt="Trabalho com método. Conduzo entrevistas e testes de usabilidade, analiso dados de uso e mapeio o fluxo existente antes de propor alternativa. Desenho em componentes e Auto Layout desde o primeiro rascunho, porque <strong>design system não é entregável isolado</strong>. É a infraestrutura que permite ao time escalar sem perder consistência." data-en="I work with method. I run interviews and usability tests, analyse usage data, and map the existing flow before proposing an alternative. I design in components and Auto Layout from the first sketch, because <strong>a design system isn't a standalone deliverable</strong>. It's the infrastructure that lets a team scale without losing consistency.">Trabalho com método. Conduzo entrevistas e testes de usabilidade, analiso dados de uso e mapeio o fluxo existente antes de propor alternativa. Desenho em componentes e Auto Layout desde o primeiro rascunho, porque <strong>design system não é entregável isolado</strong>. É a infraestrutura que permite ao time escalar sem perder consistência.</p>
           <p data-pt="Minha formação em Engenharia de Software sustenta a proximidade com quem constrói: compreendo restrição de implementação e discuto viabilidade técnica na mesma linguagem do time de desenvolvimento. Uma solução inviável de construir é uma solução que precisa ser revista." data-en="My Software Engineering background underpins how close I stay to the people who build: I understand implementation constraints and discuss technical feasibility in the same language as the engineering team. A solution that can't realistically be built is a solution that needs revisiting.">Minha formação em Engenharia de Software sustenta a proximidade com quem constrói: compreendo restrição de implementação e discuto viabilidade técnica na mesma linguagem do time de desenvolvimento. Uma solução inviável de construir é uma solução que precisa ser revista.</p>
-          <p data-pt="Busco atuar em times nos quais design participe da decisão de produto, e não apenas da execução — especialmente em produtos complexos: painéis operacionais, ferramentas internas e fluxos de alta frequência, onde uma decisão de interface bem fundamentada se converte em <strong>tempo economizado e erro evitado</strong>." data-en="I look for teams where design has a say in product decisions, not just execution — especially on complex products: operational dashboards, internal tools and high-frequency flows, where one well-reasoned interface decision converts directly into <strong>time saved and errors avoided</strong>.">Busco atuar em times nos quais design participe da decisão de produto, e não apenas da execução — especialmente em produtos complexos: painéis operacionais, ferramentas internas e fluxos de alta frequência, onde uma decisão de interface bem fundamentada se converte em <strong>tempo economizado e erro evitado</strong>.</p>
+          <p data-pt="Incorporei <strong>inteligência artificial ao meu fluxo de trabalho</strong> como ferramenta de produtividade, não como substituto de critério. Uso IA para acelerar síntese de pesquisa, gerar variações de interface para comparação, produzir conteúdo realista de teste e transformar protótipo em código funcional com Claude Code. A decisão de design continua sendo minha; a IA encurta o caminho até poder testá-la." data-en="I've built <strong>artificial intelligence into my workflow</strong> as a productivity tool, not a replacement for judgement. I use AI to speed up research synthesis, generate interface variations for comparison, produce realistic test content, and turn prototypes into working code with Claude Code. The design decision stays mine; AI shortens the path to being able to test it.">Incorporei <strong>inteligência artificial ao meu fluxo de trabalho</strong> como ferramenta de produtividade, não como substituto de critério. Uso IA para acelerar síntese de pesquisa, gerar variações de interface para comparação, produzir conteúdo realista de teste e transformar protótipo em código funcional com Claude Code. A decisão de design continua sendo minha; a IA encurta o caminho até poder testá-la.</p>
+          <p data-pt="Busco atuar em times nos quais design participe da decisão de produto, e não apenas da execução, especialmente em produtos complexos: painéis operacionais, ferramentas internas e fluxos de alta frequência, onde uma decisão de interface bem fundamentada se converte em <strong>tempo economizado e erro evitado</strong>." data-en="I look for teams where design has a say in product decisions, not just execution, especially on complex products: operational dashboards, internal tools and high-frequency flows, where one well-reasoned interface decision converts directly into <strong>time saved and errors avoided</strong>.">Busco atuar em times nos quais design participe da decisão de produto, e não apenas da execução, especialmente em produtos complexos: painéis operacionais, ferramentas internas e fluxos de alta frequência, onde uma decisão de interface bem fundamentada se converte em <strong>tempo economizado e erro evitado</strong>.</p>
         </div>
 
         <div class="rv">
@@ -448,7 +452,18 @@ footer p{margin:0}
             <div class="chips">
               <span class="chip">Figma</span><span class="chip">FigJam</span><span class="chip">Auto Layout</span>
               <span class="chip">Variables &amp; Tokens</span><span class="chip">Dev Mode</span><span class="chip">Adobe XD</span>
-              <span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">Maze</span><span class="chip">Notion</span>
+              <span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">After Effects</span>
+              <span class="chip">Cinema 4D</span><span class="chip">Maze</span><span class="chip">Notion</span>
+            </div>
+          </div>
+          <div class="tool-box">
+            <h3 data-pt="IA aplicada ao design" data-en="AI in the design workflow">IA aplicada ao design</h3>
+            <div class="chips">
+              <span class="chip">Claude Code</span><span class="chip">Claude</span><span class="chip">ChatGPT</span>
+              <span class="chip">Midjourney</span><span class="chip">Figma AI</span><span class="chip">Firefly</span>
+              <span class="chip" data-pt="Prototipagem assistida" data-en="AI-assisted prototyping">Prototipagem assistida</span>
+              <span class="chip" data-pt="Síntese de pesquisa" data-en="Research synthesis">Síntese de pesquisa</span>
+              <span class="chip" data-pt="Design to code" data-en="Design to code">Design to code</span>
             </div>
           </div>
           <div class="tool-box">
@@ -595,7 +610,7 @@ footer p{margin:0}
       <div class="sec-head rv">
         <span class="sec-num">[ 04 ]</span>
         <h2 data-pt="Trajetória" data-en="Career">Trajetória</h2>
-        <p data-pt="Como minha atuação evoluiu — da execução de interface à decisão de produto." data-en="How my practice evolved — from executing interfaces to shaping product decisions.">Como minha atuação evoluiu — da execução de interface à decisão de produto.</p>
+        <p data-pt="Como minha atuação evoluiu, da execução de interface à decisão de produto." data-en="How my practice evolved, from executing interfaces to shaping product decisions.">Como minha atuação evoluiu, da execução de interface à decisão de produto.</p>
       </div>
       <div class="rule rv"></div>
 
@@ -617,10 +632,18 @@ footer p{margin:0}
         </div>
 
         <div class="tl-item rv">
-          <div class="tl-when" data-pt="Início de carreira" data-en="Early career">Início de carreira</div>
+          <div class="tl-when" data-pt="Experiência" data-en="Experience">Experiência</div>
           <div class="tl-body">
             <h3 data-pt="Designer de Interface · Projetos independentes" data-en="Interface Designer · Independent projects">Designer de Interface · Projetos independentes</h3>
-            <p data-pt="Mais de uma década atrás comecei entregando sites, landing pages e aplicativos para clientes de segmentos distintos, atuando do briefing à entrega. Foi o período em que aprendi a traduzir objetivo de negócio em requisito de interface e a sustentar decisão de design com argumento — e não com gosto pessoal." data-en="Over a decade ago I started out delivering websites, landing pages and apps for clients across different sectors, from briefing to delivery. That was where I learned to translate business goals into interface requirements and to defend design decisions with reasoning rather than personal taste.">Mais de uma década atrás comecei entregando sites, landing pages e aplicativos para clientes de segmentos distintos, atuando do briefing à entrega. Foi o período em que aprendi a traduzir objetivo de negócio em requisito de interface e a sustentar decisão de design com argumento — e não com gosto pessoal.</p>
+            <p data-pt="Sites, landing pages e aplicativos para clientes de segmentos distintos, atuando do briefing à entrega. Foi onde consolidei a prática de traduzir objetivo de negócio em requisito de interface e de sustentar decisão de design com argumento, e não com gosto pessoal. Trabalhar sem time de produto por trás me obrigou a assumir pesquisa, definição e validação por conta própria." data-en="Websites, landing pages and apps for clients across different sectors, from briefing to delivery. This is where I consolidated the practice of translating business goals into interface requirements and defending design decisions with reasoning rather than personal taste. Working without a product team behind me meant owning research, definition and validation myself.">Sites, landing pages e aplicativos para clientes de segmentos distintos, atuando do briefing à entrega. Foi onde consolidei a prática de traduzir objetivo de negócio em requisito de interface e de sustentar decisão de design com argumento, e não com gosto pessoal. Trabalhar sem time de produto por trás me obrigou a assumir pesquisa, definição e validação por conta própria.</p>
+          </div>
+        </div>
+
+        <div class="tl-item rv">
+          <div class="tl-when" data-pt="Início de carreira" data-en="Early career">Início de carreira</div>
+          <div class="tl-body">
+            <h3 data-pt="Motion Design e Conteúdo Visual" data-en="Motion Design &amp; Visual Content">Motion Design e Conteúdo Visual</h3>
+            <p data-pt="Comecei há mais de dez anos produzindo aberturas e vinhetas para canais do YouTube em After Effects e Cinema 4D, e criando conteúdo visual para redes sociais: posts, carrosséis e peças de campanha. Foi a base da minha formação visual, hierarquia, ritmo, composição e clareza de mensagem, e onde entendi na prática que design é medido por retenção e reação de quem vê, não por elogio interno. Esse repertório de motion continua útil hoje: microinterações, transições de estado e prototipagem animada partem do mesmo raciocínio." data-en="I started out over ten years ago producing intros and stingers for YouTube channels in After Effects and Cinema 4D, and creating visual content for social media: posts, carousels and campaign assets. That was the foundation of my visual craft, hierarchy, rhythm, composition and message clarity, and where I learned first-hand that design is measured by how people respond to it, not by internal praise. That motion background still pays off: microinteractions, state transitions and animated prototyping come from the same reasoning.">Comecei há mais de dez anos produzindo aberturas e vinhetas para canais do YouTube em After Effects e Cinema 4D, e criando conteúdo visual para redes sociais: posts, carrosséis e peças de campanha. Foi a base da minha formação visual, hierarquia, ritmo, composição e clareza de mensagem, e onde entendi na prática que design é medido por retenção e reação de quem vê, não por elogio interno. Esse repertório de motion continua útil hoje: microinterações, transições de estado e prototipagem animada partem do mesmo raciocínio.</p>
           </div>
         </div>
 
@@ -676,19 +699,21 @@ footer p{margin:0}
   "use strict";
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ============ BOOT ============ */
+  /* ============ BOOT: digitação em tempo real ============ */
+  /* cada linha = [classe, [ [texto, classeDoTrecho], ... ] ] */
   var BOOT = [
-    ["c", "init design-system --project &quot;lucas-queiroz&quot;"],
-    ["k", "tokens/color <span class='v'>primary #9B7CFF · accent #4D8CFF</span>"],
-    ["k", "tokens/type <span class='v'>Bricolage Grotesque / Inter · escala 1.250</span>"],
-    ["k", "tokens/spacing <span class='v'>base 8px · 4 breakpoints</span>"],
-    ["c", "load research/entrevistas.json <span class='v'>· 12 sessões</span>"],
-    ["c", "build user-flow.fig <span class='v'>· 24 telas · 61 componentes</span>"],
-    ["k", "contraste WCAG AA <span class='v'>aprovado em 100% dos pares</span>"],
-    ["c", "run usability-test --participants 5"],
-    ["k", "protótipo validado <span class='v'>pronto para handoff</span>"],
-    ["c", "render portfolio<span class='caret'></span>"]
+    ["c", [["init design-system --project \"lucas-queiroz\"", ""]]],
+    ["k", [["tokens/color ", ""], ["#9B7CFF → #4D8CFF", "v"]]],
+    ["k", [["tokens/type  ", ""], ["Bricolage / Inter · escala 1.250", "v"]]],
+    ["k", [["tokens/grid  ", ""], ["base 8px · 4 breakpoints", "v"]]],
+    ["c", [["load research/entrevistas.json", ""], [" · 12 sessões", "v"]]],
+    ["c", [["build user-flow.fig", ""], [" · 24 telas · 61 componentes", "v"]]],
+    ["k", [["contraste WCAG AA ", ""], ["aprovado em 100% dos pares", "v"]]],
+    ["k", [["protótipo validado ", ""], ["pronto para handoff", "v"]]],
+    ["c", [["render portfolio", ""]]]
   ];
+  var CHAR_MS = 7, LINE_MS = 95;
+
   var boot = document.getElementById("boot"),
       log  = document.getElementById("bootlog"),
       bar  = document.getElementById("bootbar"),
@@ -704,6 +729,50 @@ footer p{margin:0}
     initReveal();
   }
 
+  function typeBoot(){
+    var caret = document.createElement("span");
+    caret.className = "caret";
+    var li = 0, total = BOOT.length;
+
+    function nextLine(){
+      if(finished) return;
+      if(li >= total){
+        bar.style.width = "100%";
+        timers.push(setTimeout(endBoot, 430));
+        return;
+      }
+      var spec = BOOT[li], row = document.createElement("div");
+      row.className = spec[0];
+      log.appendChild(row);
+      row.appendChild(caret);
+
+      var si = 0;
+
+      function nextSeg(){
+        if(finished) return;
+        if(si >= spec[1].length){
+          li++;
+          bar.style.width = Math.round((li / total) * 100) + "%";
+          timers.push(setTimeout(nextLine, LINE_MS));
+          return;
+        }
+        var seg = spec[1][si], span = document.createElement("span");
+        if(seg[1]) span.className = seg[1];
+        row.insertBefore(span, caret);
+
+        var ci = 0, txt = seg[0];
+        (function typeChar(){
+          if(finished) return;
+          if(ci >= txt.length){ si++; nextSeg(); return; }
+          span.appendChild(document.createTextNode(txt.charAt(ci++)));
+          timers.push(setTimeout(typeChar, CHAR_MS));
+        })();
+      }
+      nextSeg();
+    }
+    nextLine();
+  }
+
   var seen = false;
   try{ seen = sessionStorage.getItem("lq-boot") === "1"; }catch(e){}
 
@@ -716,17 +785,75 @@ footer p{margin:0}
     document.addEventListener("keydown", function k(e){
       if(e.key === "Escape" || e.key === " "){ endBoot(); document.removeEventListener("keydown", k); }
     });
-    BOOT.forEach(function(line, i){
-      timers.push(setTimeout(function(){
-        var d = document.createElement("div");
-        d.className = line[0];
-        d.innerHTML = line[1];
-        log.appendChild(d);
-        bar.style.width = Math.round(((i + 1) / BOOT.length) * 100) + "%";
-      }, 190 + i * 170));
-    });
-    timers.push(setTimeout(endBoot, 190 + BOOT.length * 170 + 520));
+    timers.push(setTimeout(typeBoot, 220));
   }
+
+  /* ============ FUNDO: partículas com parallax ============ */
+  (function particles(){
+    var cv = document.getElementById("bgfx");
+    if(!cv || reduce){ if(cv) cv.style.display = "none"; return; }
+    var ctx = cv.getContext("2d"), w = 0, h = 0, dpr = 1, parts = [],
+        scrollY = 0, mx = 0, my = 0, tmx = 0, tmy = 0;
+
+    function build(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth; h = window.innerHeight;
+      cv.width = w * dpr; cv.height = h * dpr;
+      cv.style.width = w + "px"; cv.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      var n = Math.round(Math.min(90, Math.max(28, (w * h) / 20000)));
+      parts = [];
+      for(var i = 0; i < n; i++){
+        var depth = 0.25 + Math.random() * 0.75;
+        parts.push({
+          x: Math.random() * w,
+          y: Math.random() * h * 1.6,
+          r: (0.7 + Math.random() * 1.9) * depth,
+          d: depth,
+          vx: (Math.random() - 0.5) * 0.09,
+          vy: -0.05 - Math.random() * 0.14,
+          a: (0.14 + Math.random() * 0.42) * depth,
+          c: Math.random() > 0.5 ? "155,124,255" : "77,140,255"
+        });
+      }
+    }
+
+    function frame(){
+      ctx.clearRect(0, 0, w, h);
+      mx += (tmx - mx) * 0.045;
+      my += (tmy - my) * 0.045;
+
+      for(var i = 0; i < parts.length; i++){
+        var p = parts[i];
+        p.x += p.vx; p.y += p.vy;
+        if(p.y < -30) { p.y = h * 1.6; p.x = Math.random() * w; }
+        if(p.x < -30) p.x = w + 20;
+        if(p.x > w + 30) p.x = -20;
+
+        /* parallax: camadas mais próximas reagem mais ao scroll e ao mouse */
+        var px = p.x + mx * p.d * 26,
+            py = p.y - (scrollY * p.d * 0.16);
+        py = ((py % (h * 1.6)) + h * 1.6) % (h * 1.6);
+        if(py > h + 40) continue;
+
+        ctx.beginPath();
+        ctx.arc(px, py + my * p.d * 18, p.r, 0, 6.2832);
+        ctx.fillStyle = "rgba(" + p.c + "," + p.a + ")";
+        ctx.fill();
+      }
+      requestAnimationFrame(frame);
+    }
+
+    build();
+    window.addEventListener("resize", build);
+    window.addEventListener("scroll", function(){ scrollY = window.scrollY; }, {passive:true});
+    window.addEventListener("pointermove", function(e){
+      tmx = (e.clientX / window.innerWidth - 0.5) * 2;
+      tmy = (e.clientY / window.innerHeight - 0.5) * 2;
+    }, {passive:true});
+    requestAnimationFrame(frame);
+  })();
 
   /* ============ ano ============ */
   document.getElementById("yr").textContent = new Date().getFullYear();
