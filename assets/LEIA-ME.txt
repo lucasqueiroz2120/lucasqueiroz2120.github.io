@@ -1,11 +1,12 @@
 Coloque aqui os screenshots dos projetos, exportados do Figma.
 
 Nomes esperados pelo index.html:
-  projeto-01.png   (destaque, largura total -> exporte em 2100x900 px)
+  projeto-01.png   (16:10 -> 1600x1000 px)
   projeto-02.png   (16:10 -> 1600x1000 px)
   projeto-03.png
   projeto-04.png
   projeto-05.png
+  projeto-06.png
 
 Export no Figma: selecione o frame > painel Export > PNG > 2x > Export.
 Se o arquivo passar de ~500 KB, converta pra .webp e troque a extensao
