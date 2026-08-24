@@ -773,10 +773,7 @@ footer p{margin:0}
     nextLine();
   }
 
-  var seen = false;
-  try{ seen = sessionStorage.getItem("lq-boot") === "1"; }catch(e){}
-
-  if(reduce || seen){
+  if(reduce){
     boot.parentNode.removeChild(boot);
     initReveal();
   } else {
