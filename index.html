@@ -50,11 +50,12 @@ body::before{
   html.cur-on #curDot,html.cur-on #curRing{opacity:1}
   #curDot{width:6px;height:6px;background:var(--acc);transition:opacity .25s,width .2s,height .2s}
   #curRing{
-    width:34px;height:34px;border:1px solid rgba(124,92,255,.5);
+    width:34px;height:34px;border:1px solid rgba(124,92,255,.78);
+    background:rgba(124,92,255,.09);
     transition:width .28s cubic-bezier(.2,.7,.3,1),height .28s cubic-bezier(.2,.7,.3,1),
                background .28s,border-color .28s,opacity .25s;
   }
-  #curRing.hot{width:58px;height:58px;background:rgba(124,92,255,.13);border-color:rgba(124,92,255,.95)}
+  #curRing.hot{width:58px;height:58px;background:rgba(124,92,255,.18);border-color:rgba(124,92,255,1)}
   html.cur-hot #curDot{width:0;height:0}
   #curRing.down{width:24px;height:24px;background:rgba(124,92,255,.22)}
   html.cur-hide #curDot,html.cur-hide #curRing{opacity:0}
