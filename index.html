@@ -92,7 +92,9 @@ header{
 }
 header.stuck{border-bottom-color:var(--line);background:rgba(7,6,13,.92)}
 .bar{display:flex;align-items:center;gap:24px;height:64px}
-.brand{font-family:var(--disp);font-weight:700;letter-spacing:-.02em;font-size:15px;white-space:nowrap}
+.brand{display:inline-flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:700;letter-spacing:-.02em;font-size:15px;white-space:nowrap}
+.avatar{width:28px;height:28px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line-2);transition:border-color .25s,transform .25s}
+.brand:hover .avatar{border-color:var(--acc);transform:scale(1.06)}
 .brand i{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 nav{display:flex;gap:22px;margin-left:auto}
 nav a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);transition:color .2s;position:relative}
@@ -292,7 +294,7 @@ footer p{margin:0}
 
 <header id="hdr">
   <div class="wrap bar">
-    <a href="#top" class="brand">Lucas Queiroz<i>.</i></a>
+    <a href="#top" class="brand"><img class="avatar" src="assets/avatar.jpg" alt="" data-av>Lucas Queiroz<i>.</i></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
     <nav id="nav">
       <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
@@ -989,6 +991,15 @@ footer p{margin:0}
     }, {rootMargin:"-45% 0px -50% 0px"});
     secs.forEach(function(s){ spy.observe(s); });
   }
+
+  /* ============ avatar: some se o arquivo ainda nao existe ============ */
+  (function(){
+    var av = document.querySelector("img[data-av]");
+    if(!av) return;
+    var hide = function(){ av.style.display = "none"; };
+    av.addEventListener("error", hide);
+    if(av.complete && !av.naturalWidth) hide();
+  })();
 
   /* ============ placeholder de imagem ============ */
   document.querySelectorAll("img[data-ph]").forEach(function(img){
