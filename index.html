@@ -181,9 +181,10 @@ h1 .hi{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 /* ================= SEÇÕES ================= */
 section{padding:96px 0;position:relative;scroll-margin-top:72px}
 .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:36px;flex-wrap:wrap}
-.sec-mark{display:inline-block;width:28px;height:2px;border-radius:2px;background:var(--grad);flex:none}
-.sec-head .sec-mark{align-self:center;transform:translateY(1px)}
-.contact .sec-mark{margin-bottom:22px}
+.sec-mark{display:inline-block;font-family:var(--mono);font-size:20px;line-height:1;color:var(--acc);flex:none;-webkit-user-select:none;user-select:none}
+.sec-mark::before{content:"//"}
+.sec-head .sec-mark{align-self:center}
+.contact .sec-mark{display:block;margin-bottom:18px}
 .sec-head h2{font-family:var(--disp);font-weight:700;letter-spacing:-.035em;font-size:clamp(28px,4.4vw,46px);margin:0;line-height:1.05}
 .sec-head p{margin:0;color:var(--mut);font-size:14px;margin-left:auto;max-width:40ch}
 .rule{height:1px;background:var(--line);margin-bottom:40px}
