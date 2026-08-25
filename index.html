@@ -735,12 +735,22 @@ footer p{margin:0}
 
   /* ============ BOOT: digitação em tempo real ============ */
   /* cada linha = [classe, [ [texto, classeDoTrecho], ... ] ] */
-  var BOOT = [
-    ["c", [["init design-system", ""]]],
-    ["k", [["tokens ", ""], ["grid 8px · WCAG AA", "v"]]],
-    ["c", [["build user-flow.fig", ""], [" · 24 telas", "v"]]],
-    ["c", [["render portfolio", ""]]]
+  var BOOT_PT = [
+    ["c", [["load perfil \"lucas queiroz\"", ""]]],
+    ["k", [["ux/ui · product design ", ""], ["10 anos", "v"]]],
+    ["c", [["build user-flow.fig", ""], [" · protótipo validado", "v"]]],
+    ["c", [["render portfolio", ""]]],
+    ["k", [["bem-vindo", ""]]]
   ];
+  var BOOT_EN = [
+    ["c", [["load profile \"lucas queiroz\"", ""]]],
+    ["k", [["ux/ui · product design ", ""], ["10 years", "v"]]],
+    ["c", [["build user-flow.fig", ""], [" · prototype validated", "v"]]],
+    ["c", [["render portfolio", ""]]],
+    ["k", [["welcome", ""]]]
+  ];
+  var BOOT = BOOT_PT;
+  try{ if(localStorage.getItem("lq-lang") === "en") BOOT = BOOT_EN; }catch(e){}
   var CHAR_MS = 6, LINE_MS = 70;
 
   var boot = document.getElementById("boot"),
