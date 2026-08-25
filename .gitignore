@@ -1,3 +1,6 @@
 # Prints originais em PNG ficam so na maquina.
 # A versao publicada e o .jpg otimizado gerado a partir deles.
 assets/*.png
+
+# retrato de origem fica so na maquina
+avatar.png
