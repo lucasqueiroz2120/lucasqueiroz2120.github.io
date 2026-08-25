@@ -181,7 +181,9 @@ h1 .hi{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 /* ================= SEÇÕES ================= */
 section{padding:96px 0;position:relative;scroll-margin-top:72px}
 .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:36px;flex-wrap:wrap}
-.sec-num{font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--acc)}
+.sec-mark{display:inline-block;width:28px;height:2px;border-radius:2px;background:var(--grad);flex:none}
+.sec-head .sec-mark{align-self:center;transform:translateY(1px)}
+.contact .sec-mark{margin-bottom:22px}
 .sec-head h2{font-family:var(--disp);font-weight:700;letter-spacing:-.035em;font-size:clamp(28px,4.4vw,46px);margin:0;line-height:1.05}
 .sec-head p{margin:0;color:var(--mut);font-size:14px;margin-left:auto;max-width:40ch}
 .rule{height:1px;background:var(--line);margin-bottom:40px}
@@ -455,7 +457,7 @@ footer p{margin:0}
   <section id="sobre">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="sec-num">[ 01 ]</span>
+        <span class="sec-mark" aria-hidden="true"></span>
         <h2 data-pt="Sobre mim" data-en="About me">Sobre mim</h2>
         <p data-pt="Como eu entendo o papel do design dentro de um time de produto." data-en="How I see the role of design inside a product team.">Como eu entendo o papel do design dentro de um time de produto.</p>
       </div>
@@ -516,7 +518,7 @@ footer p{margin:0}
   <section id="projetos">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="sec-num">[ 02 ]</span>
+        <span class="sec-mark" aria-hidden="true"></span>
         <h2 data-pt="Projetos selecionados" data-en="Selected work">Projetos selecionados</h2>
         <p data-pt="Cada projeto abre o protótipo navegável no Figma." data-en="Each project opens its live Figma prototype.">Cada projeto abre o protótipo navegável no Figma.</p>
       </div>
@@ -611,7 +613,7 @@ footer p{margin:0}
   <section id="trajetoria">
     <div class="wrap">
       <div class="sec-head rv">
-        <span class="sec-num">[ 03 ]</span>
+        <span class="sec-mark" aria-hidden="true"></span>
         <h2 data-pt="Trajetória" data-en="Career">Trajetória</h2>
         <p data-pt="Como minha atuação evoluiu, da execução de interface à decisão de produto." data-en="How my practice evolved, from executing interfaces to shaping product decisions.">Como minha atuação evoluiu, da execução de interface à decisão de produto.</p>
       </div>
@@ -665,7 +667,7 @@ footer p{margin:0}
   <!-- ================= CONTATO ================= -->
   <section id="contato" class="contact">
     <div class="wrap">
-      <span class="sec-num">[ 04 ]</span>
+      <span class="sec-mark" aria-hidden="true"></span>
       <h2>
         <span data-pt="Vamos discutir" data-en="Let's talk about">Vamos discutir</span><br>
         <span class="hi" data-pt="o seu produto." data-en="your product.">o seu produto.</span>
