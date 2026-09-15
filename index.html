@@ -219,6 +219,47 @@ section{padding:96px 0;position:relative;scroll-margin-top:72px}
 .links a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);display:inline-flex;align-items:center;gap:6px;transition:.2s}
 .links a:hover{color:var(--acc)}
 
+/* ============ ESTUDO DE CASO (lightbox) ============ */
+.links .cs-open{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);background:none;border:0;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.2s}
+.links .cs-open:hover{color:var(--tx)}
+.links .cs-open:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:3px}
+
+.cs-ov{position:fixed;inset:0;z-index:120;display:none;padding:clamp(12px,4vw,40px);overflow-y:auto;background:rgba(5,4,10,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.cs-ov.on{display:flex;align-items:flex-start;justify-content:center}
+.cs-panel{position:relative;width:100%;max-width:840px;margin:auto;background:var(--card);border:1px solid var(--line-2);border-radius:var(--r);box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:0;transform:translateY(14px);transition:opacity .28s ease,transform .28s ease}
+.cs-ov.on .cs-panel{opacity:1;transform:none}
+.cs-head{position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;gap:20px;justify-content:space-between;padding:26px clamp(20px,4vw,38px) 18px;background:var(--card);border-bottom:1px solid var(--line);border-radius:var(--r) var(--r) 0 0}
+.cs-head h3{font-family:var(--disp);font-size:clamp(22px,3.4vw,30px);line-height:1.15;letter-spacing:-.02em;margin:0 0 8px}
+.cs-meta{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim);line-height:1.7}
+.cs-x{flex:0 0 auto;width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);background:transparent;color:var(--mut);font-size:19px;line-height:1;cursor:pointer;transition:.2s}
+.cs-x:hover{background:var(--card-2);color:var(--tx);border-color:var(--acc)}
+.cs-x:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.cs-body{padding:8px clamp(20px,4vw,38px) clamp(26px,4vw,38px)}
+.cs-sec{padding:24px 0;border-bottom:1px solid var(--line)}
+.cs-sec:last-child{border-bottom:0;padding-bottom:4px}
+.cs-sec > b{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:12px}
+.cs-sec p{color:var(--mut);font-size:14.5px;line-height:1.75;margin:0 0 12px}
+.cs-sec p:last-child{margin-bottom:0}
+.cs-sec p b{color:var(--tx);font-weight:600}
+.cs-dec{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.cs-dec li{background:var(--card-2);border:1px solid var(--line);border-left:2px solid var(--acc);border-radius:0 var(--r) var(--r) 0;padding:16px 18px}
+.cs-dec strong{display:block;color:var(--tx);font-size:14.5px;margin-bottom:6px;font-weight:600}
+.cs-dec span{display:block;color:var(--mut);font-size:14px;line-height:1.7}
+.cs-foot{display:flex;flex-wrap:wrap;gap:12px;padding-top:22px}
+.cs-foot a{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:12px 18px;border-radius:999px;border:1px solid var(--line-2);color:var(--tx);transition:.2s}
+.cs-foot a:hover{border-color:var(--acc);color:var(--acc)}
+.cs-foot a.pri{background:var(--grad);border-color:transparent;color:var(--acc-ink)}
+.cs-foot a.pri:hover{filter:brightness(1.12);color:var(--acc-ink)}
+body.cs-lock{overflow:hidden}
+@media (max-width:640px){
+  .cs-head{padding:20px 18px 14px;gap:12px}
+  .cs-body{padding:4px 18px 24px}
+  .cs-foot a{flex:1 1 100%;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  .cs-panel{transition:none}
+}
+
 .steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
 .step{padding:26px 22px;border-right:1px solid var(--line);background:var(--card);transition:.25s}
 .step:last-child{border-right:0}
@@ -527,6 +568,19 @@ footer p{margin:0}
       <div class="grid">
 
         <article class="card rv">
+          <div class="thumb"><span class="tag">Web · Financeiro</span>
+            <img src="assets/projeto-04.jpg" alt="" data-ph>
+            <div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="9" r="1.4"/></svg><span>assets/projeto-04.jpg</span></div>
+          </div>
+          <div class="card-body">
+            <h3>Banco BRP</h3>
+            <p data-pt="Desenhei uma experiência capaz de atender dois perfis distintos, pessoa física e empresa. A hierarquia visual e a segmentação da navegação reduzem ruídos e direcionam cada usuário aos serviços mais relevantes." data-en="I designed an experience able to serve two distinct profiles, personal and business customers. Visual hierarchy and segmented navigation cut noise and steer each user towards the most relevant services.">Desenhei uma experiência capaz de atender dois perfis distintos, pessoa física e empresa. A hierarquia visual e a segmentação da navegação reduzem ruídos e direcionam cada usuário aos serviços mais relevantes.</p>
+            <div class="stack"><em>UI Design</em><em>Prototipagem</em><em>Figma</em></div>
+            <div class="links"><a href="https://www.figma.com/proto/MuL86n8fR4FgKHdIffzp6E/Banco-BRP?node-id=6939-426&amp;viewport=596%2C506%2C0.04&amp;t=WGE7w8WVlwyocifD-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=6939%3A425" target="_blank" rel="noopener" data-pt="Ver protótipo ↗" data-en="View prototype ↗">Ver protótipo ↗</a><button type="button" class="cs-open" data-cs="brp" aria-haspopup="dialog" data-pt="Ver estudo de caso ↗" data-en="View case study ↗">Ver estudo de caso ↗</button></div>
+          </div>
+        </article>
+
+        <article class="card rv">
           <div class="thumb"><span class="tag">Web · Institucional</span>
             <img src="assets/projeto-01.jpg" alt="" data-ph>
             <div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="9" r="1.4"/></svg><span>assets/projeto-01.jpg</span></div>
@@ -562,19 +616,6 @@ footer p{margin:0}
             <p data-pt="Criei uma experiência focada na comparação entre modelos de scooters elétricas. Informações como autonomia, potência e freios ganham destaque para facilitar a escolha e apoiar a decisão de compra." data-en="I created an experience centred on comparing electric scooter models. Details like range, power and brakes are given prominence to make the choice easier and support the buying decision.">Criei uma experiência focada na comparação entre modelos de scooters elétricas. Informações como autonomia, potência e freios ganham destaque para facilitar a escolha e apoiar a decisão de compra.</p>
             <div class="stack"><em>UI Design</em><em>Prototipagem</em><em>Figma</em></div>
             <div class="links"><a href="https://www.figma.com/proto/e5NHC90hGEMpBUvTx3TEIr/Shineray?node-id=2528-2685&amp;viewport=222%2C416%2C0.13&amp;t=L9aRy3mAe7jBFqd1-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;starting-point-node-id=2528%3A2685&amp;page-id=2528%3A2684" target="_blank" rel="noopener" data-pt="Ver protótipo ↗" data-en="View prototype ↗">Ver protótipo ↗</a></div>
-          </div>
-        </article>
-
-        <article class="card rv">
-          <div class="thumb"><span class="tag">Web · Financeiro</span>
-            <img src="assets/projeto-04.jpg" alt="" data-ph>
-            <div class="ph"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="9" cy="9" r="1.4"/></svg><span>assets/projeto-04.jpg</span></div>
-          </div>
-          <div class="card-body">
-            <h3>Banco BRP</h3>
-            <p data-pt="Desenhei uma experiência capaz de atender dois perfis distintos, pessoa física e empresa. A hierarquia visual e a segmentação da navegação reduzem ruídos e direcionam cada usuário aos serviços mais relevantes." data-en="I designed an experience able to serve two distinct profiles, personal and business customers. Visual hierarchy and segmented navigation cut noise and steer each user towards the most relevant services.">Desenhei uma experiência capaz de atender dois perfis distintos, pessoa física e empresa. A hierarquia visual e a segmentação da navegação reduzem ruídos e direcionam cada usuário aos serviços mais relevantes.</p>
-            <div class="stack"><em>UI Design</em><em>Prototipagem</em><em>Figma</em></div>
-            <div class="links"><a href="https://www.figma.com/proto/MuL86n8fR4FgKHdIffzp6E/Banco-BRP?node-id=6939-426&amp;viewport=596%2C506%2C0.04&amp;t=WGE7w8WVlwyocifD-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=6939%3A425" target="_blank" rel="noopener" data-pt="Ver protótipo ↗" data-en="View prototype ↗">Ver protótipo ↗</a></div>
           </div>
         </article>
 
@@ -698,6 +739,65 @@ footer p{margin:0}
     <p data-pt="Desenhado e codificado à mão" data-en="Designed and coded by hand">Desenhado e codificado à mão</p>
   </div>
 </footer>
+
+<!-- ============ ESTUDO DE CASO: BANCO BRP ============ -->
+<div class="cs-ov" id="cs-brp" role="dialog" aria-modal="true" aria-labelledby="cs-brp-t" hidden>
+  <div class="cs-panel" role="document">
+    <div class="cs-head">
+      <div>
+        <h3 id="cs-brp-t">Banco BRP</h3>
+        <div class="cs-meta" data-pt="Estudo de caso &middot; Produto digital financeiro<br>Site de 20 telas e app mobile de 60+ telas &middot; Figma" data-en="Case study &middot; Digital banking product<br>20-screen website and 60+ screen mobile app &middot; Figma">Estudo de caso &middot; Produto digital financeiro<br>Site de 20 telas e app mobile de 60+ telas &middot; Figma</div>
+      </div>
+      <button type="button" class="cs-x" data-cs-close aria-label="Fechar estudo de caso">&times;</button>
+    </div>
+    <div class="cs-body">
+
+      <div class="cs-sec">
+        <b data-pt="O contexto" data-en="Context">O contexto</b>
+        <p data-pt="O Banco BRP precisava de um produto digital capaz de atender dois p&uacute;blicos com necessidades pouco parecidas: a pessoa f&iacute;sica, que entra para resolver algo pontual e sair, e a empresa, que procura crédito e servi&ccedil;os de maior complexidade e compara antes de decidir. O escopo somou um site de 20 telas e um aplicativo mobile de mais de 60 telas." data-en="Banco BRP needed a digital product able to serve two audiences with very different needs: personal customers, who come in to solve one thing and leave, and business customers, who look for credit and more complex services and compare before deciding. The scope added up to a 20-screen website and a mobile app with more than 60 screens.">O Banco BRP precisava de um produto digital capaz de atender dois p&uacute;blicos com necessidades pouco parecidas: a pessoa f&iacute;sica, que entra para resolver algo pontual e sair, e a empresa, que procura crédito e servi&ccedil;os de maior complexidade e compara antes de decidir. O escopo somou um site de 20 telas e um aplicativo mobile de mais de 60 telas.</p>
+      </div>
+
+      <div class="cs-sec">
+        <b data-pt="O problema" data-en="The problem">O problema</b>
+        <p data-pt="Quando dois p&uacute;blicos dividem o mesmo produto financeiro, a tenta&ccedil;&atilde;o &eacute; somar tudo em um menu s&oacute;. O resultado costuma ser um site que funciona na home e desmonta da segunda p&aacute;gina em diante: a pessoa f&iacute;sica trope&ccedil;a em conte&uacute;do de empresa, e a empresa n&atilde;o chega no que procura sem atravessar informa&ccedil;&atilde;o que n&atilde;o &eacute; dela." data-en="When two audiences share the same financial product, the temptation is to pile everything into one menu. The result usually works on the homepage and falls apart from the second page on: personal customers trip over business content, and business customers cannot reach what they came for without wading through information meant for someone else.">Quando dois p&uacute;blicos dividem o mesmo produto financeiro, a tenta&ccedil;&atilde;o &eacute; somar tudo em um menu s&oacute;. O resultado costuma ser um site que funciona na home e desmonta da segunda p&aacute;gina em diante: a pessoa f&iacute;sica trope&ccedil;a em conte&uacute;do de empresa, e a empresa n&atilde;o chega no que procura sem atravessar informa&ccedil;&atilde;o que n&atilde;o &eacute; dela.</p>
+        <p data-pt="Some a isso o volume natural de um banco. H&aacute; muito conte&uacute;do obrigat&oacute;rio e regulat&oacute;rio disputando espa&ccedil;o com aquilo que o usu&aacute;rio de fato veio fazer, e nenhum dos dois pode simplesmente sumir." data-en="Add to that the sheer volume a bank carries. A lot of mandatory and regulatory content competes for space with what the user actually came to do, and neither of them can simply disappear.">Some a isso o volume natural de um banco. H&aacute; muito conte&uacute;do obrigat&oacute;rio e regulat&oacute;rio disputando espa&ccedil;o com aquilo que o usu&aacute;rio de fato veio fazer, e nenhum dos dois pode simplesmente sumir.</p>
+      </div>
+
+      <div class="cs-sec">
+        <b data-pt="Como eu comecei" data-en="How I started">Como eu comecei</b>
+        <p data-pt="Antes de abrir o Figma, montei com o cliente um briefing que mapeia o produto inteiro: cada p&aacute;gina, cada bloco dentro da p&aacute;gina e o que aquele bloco precisa comunicar." data-en="Before opening Figma, I built a briefing document with the client mapping the whole product: every page, every block inside each page and what that block needs to communicate.">Antes de abrir o Figma, montei com o cliente um briefing que mapeia o produto inteiro: cada p&aacute;gina, cada bloco dentro da p&aacute;gina e o que aquele bloco precisa comunicar.</p>
+        <p data-pt="Esse documento existe para evitar a armadilha mais comum de um redesenho, que &eacute; <b>trocar a apar&ecirc;ncia e manter a mesma estrutura ruim embaixo</b>. Com o mapa pronto, a arquitetura de informa&ccedil;&atilde;o &eacute; discutida e aprovada antes de qualquer pixel, e as telas passam a ser consequ&ecirc;ncia de uma decis&atilde;o j&aacute; tomada em vez de tentativa." data-en="That document exists to avoid the most common trap in a redesign, which is <b>changing the surface while keeping the same broken structure underneath</b>. With the map in hand, information architecture gets discussed and approved before any pixel, so the screens become the consequence of a decision already made rather than a guess.">Esse documento existe para evitar a armadilha mais comum de um redesenho, que &eacute; <b>trocar a apar&ecirc;ncia e manter a mesma estrutura ruim embaixo</b>. Com o mapa pronto, a arquitetura de informa&ccedil;&atilde;o &eacute; discutida e aprovada antes de qualquer pixel, e as telas passam a ser consequ&ecirc;ncia de uma decis&atilde;o j&aacute; tomada em vez de tentativa.</p>
+      </div>
+
+      <div class="cs-sec">
+        <b data-pt="As decis&otilde;es de design" data-en="Design decisions">As decis&otilde;es de design</b>
+        <ul class="cs-dec">
+          <li><strong data-pt="Segmentar a navega&ccedil;&atilde;o em vez de acumular" data-en="Segmented navigation instead of an accumulated menu">Segmentar a navega&ccedil;&atilde;o em vez de acumular</strong><span data-pt="A separa&ccedil;&atilde;o entre pessoa f&iacute;sica e empresa acontece no topo da jornada, e n&atilde;o dentro de submenus. A alternativa que descartei foi o menu &uacute;nico com listas longas: ele at&eacute; se sustenta no desktop, mas no mobile vira rolagem infinita e obriga o usu&aacute;rio a ler op&ccedil;&otilde;es que nunca ser&atilde;o dele." data-en="The split between personal and business happens at the top of the journey, not buried in submenus. The alternative I ruled out was a single menu with long lists: it holds up on desktop, but on mobile it becomes endless scrolling and forces users to read options that will never apply to them.">A separa&ccedil;&atilde;o entre pessoa f&iacute;sica e empresa acontece no topo da jornada, e n&atilde;o dentro de submenus. A alternativa que descartei foi o menu &uacute;nico com listas longas: ele at&eacute; se sustenta no desktop, mas no mobile vira rolagem infinita e obriga o usu&aacute;rio a ler op&ccedil;&otilde;es que nunca ser&atilde;o dele.</span></li>
+          <li><strong data-pt="Hierarquia visual como filtro, n&atilde;o como enfeite" data-en="Visual hierarchy as a filter, not decoration">Hierarquia visual como filtro, n&atilde;o como enfeite</strong><span data-pt="Cada tela tem um caminho principal evidente e um segundo n&iacute;vel que s&oacute; aparece quando o olho procura. &Eacute; o que permite manter o conte&uacute;do obrigat&oacute;rio na p&aacute;gina sem que ele dispute aten&ccedil;&atilde;o com a a&ccedil;&atilde;o que importa." data-en="Every screen has one obvious primary path and a second level that only surfaces when the eye goes looking for it. That is what keeps mandatory content on the page without letting it compete with the action that matters.">Cada tela tem um caminho principal evidente e um segundo n&iacute;vel que s&oacute; aparece quando o olho procura. &Eacute; o que permite manter o conte&uacute;do obrigat&oacute;rio na p&aacute;gina sem que ele dispute aten&ccedil;&atilde;o com a a&ccedil;&atilde;o que importa.</span></li>
+          <li><strong data-pt="Reorganizar sem alongar a jornada" data-en="Reorganise without lengthening the journey">Reorganizar sem alongar a jornada</strong><span data-pt="Reorganizar conte&uacute;do quase sempre empurra o usu&aacute;rio para mais um clique. A regra que segui foi simples: <b>nenhum servi&ccedil;o principal pode terminar mais longe do que estava antes</b>. Conte&uacute;do secund&aacute;rio foi reposicionado, nunca enterrado." data-en="Reorganising content almost always pushes the user into one more click. The rule I followed was simple: <b>no primary service may end up further away than it was before</b>. Secondary content was repositioned, never buried.">Reorganizar conte&uacute;do quase sempre empurra o usu&aacute;rio para mais um clique. A regra que segui foi simples: <b>nenhum servi&ccedil;o principal pode terminar mais longe do que estava antes</b>. Conte&uacute;do secund&aacute;rio foi reposicionado, nunca enterrado.</span></li>
+          <li><strong data-pt="Consist&ecirc;ncia entre 80 telas" data-en="Consistency across 80 screens">Consist&ecirc;ncia entre 80 telas</strong><span data-pt="Com um site de 20 telas e um app de 60+, componente repetido &eacute; o que segura a coer&ecirc;ncia. Padronizei cabe&ccedil;alhos, cards de produto, formul&aacute;rios e estados numa biblioteca &uacute;nica no Figma, de forma que o time de desenvolvimento recebesse repeti&ccedil;&atilde;o previs&iacute;vel em vez de oitenta telas &uacute;nicas." data-en="With a 20-screen site and a 60+ screen app, repeated components are what hold coherence together. I standardised headers, product cards, forms and states in a single Figma library, so the development team received predictable repetition instead of eighty one-off screens.">Com um site de 20 telas e um app de 60+, componente repetido &eacute; o que segura a coer&ecirc;ncia. Padronizei cabe&ccedil;alhos, cards de produto, formul&aacute;rios e estados numa biblioteca &uacute;nica no Figma, de forma que o time de desenvolvimento recebesse repeti&ccedil;&atilde;o previs&iacute;vel em vez de oitenta telas &uacute;nicas.</span></li>
+        </ul>
+      </div>
+
+      <div class="cs-sec">
+        <b data-pt="O que eu entreguei" data-en="What I delivered">O que eu entreguei</b>
+        <p data-pt="Fluxo completo naveg&aacute;vel em prot&oacute;tipo no Figma, telas em alta fidelidade para as duas jornadas e a biblioteca de componentes compartilhada entre site e aplicativo. Conduzi o design sozinho, em conversa direta com os times de desenvolvimento e de diagrama&ccedil;&atilde;o durante a implementa&ccedil;&atilde;o." data-en="A fully navigable prototype in Figma, high-fidelity screens for both journeys and the component library shared between website and app. I led the design on my own, in direct conversation with the development and production teams throughout implementation.">Fluxo completo naveg&aacute;vel em prot&oacute;tipo no Figma, telas em alta fidelidade para as duas jornadas e a biblioteca de componentes compartilhada entre site e aplicativo. Conduzi o design sozinho, em conversa direta com os times de desenvolvimento e de diagrama&ccedil;&atilde;o durante a implementa&ccedil;&atilde;o.</p>
+      </div>
+
+      <div class="cs-sec">
+        <b data-pt="Sobre impacto, com honestidade" data-en="On impact, honestly">Sobre impacto, com honestidade</b>
+        <p data-pt="Este projeto foi entregue sem instrumenta&ccedil;&atilde;o de m&eacute;tricas do meu lado, ent&atilde;o <b>eu n&atilde;o tenho n&uacute;mero de impacto para mostrar aqui</b>, e prefiro dizer isso a apresentar um n&uacute;mero que eu n&atilde;o mediria." data-en="This project shipped without measurement instrumented on my side, so <b>I have no impact numbers to show here</b>, and I would rather say that than present a figure I did not measure.">Este projeto foi entregue sem instrumenta&ccedil;&atilde;o de m&eacute;tricas do meu lado, ent&atilde;o <b>eu n&atilde;o tenho n&uacute;mero de impacto para mostrar aqui</b>, e prefiro dizer isso a apresentar um n&uacute;mero que eu n&atilde;o mediria.</p>
+        <p data-pt="Se eu retomasse o projeto hoje, as tr&ecirc;s medidas que eu colocaria para provar ou derrubar as decis&otilde;es acima seriam: acerto na primeira escolha entre pessoa f&iacute;sica e empresa, n&uacute;mero de cliques at&eacute; os tr&ecirc;s servi&ccedil;os mais buscados de cada perfil, e taxa de conclus&atilde;o dos formul&aacute;rios de abertura de conta e de cr&eacute;dito." data-en="If I picked the project up today, the three measures I would put in place to prove or break the decisions above would be: first-choice accuracy between personal and business, number of clicks to the three most sought services in each profile, and completion rate on the account-opening and credit forms.">Se eu retomasse o projeto hoje, as tr&ecirc;s medidas que eu colocaria para provar ou derrubar as decis&otilde;es acima seriam: acerto na primeira escolha entre pessoa f&iacute;sica e empresa, n&uacute;mero de cliques at&eacute; os tr&ecirc;s servi&ccedil;os mais buscados de cada perfil, e taxa de conclus&atilde;o dos formul&aacute;rios de abertura de conta e de cr&eacute;dito.</p>
+      </div>
+
+      <div class="cs-foot">
+        <a href="https://www.figma.com/proto/MuL86n8fR4FgKHdIffzp6E/Banco-BRP?node-id=6939-426&amp;viewport=596%2C506%2C0.04&amp;t=WGE7w8WVlwyocifD-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=6939%3A425" target="_blank" rel="noopener" class="pri" data-pt="Ver prot&oacute;tipo no Figma &#8599;" data-en="View Figma prototype &#8599;">Ver prot&oacute;tipo no Figma &#8599;</a>
+        <a href="#contato" data-cs-close data-pt="Falar sobre este projeto" data-en="Talk about this project">Falar sobre este projeto</a>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -979,6 +1079,64 @@ footer p{margin:0}
     if(img.complete){ img.naturalWidth ? show() : hide(); }
   });
 
+  /* ============ ESTUDO DE CASO (lightbox) ============ */
+  (function(){
+    var lastFocus = null;
+    var openOv = null;
+
+    function focusables(root){
+      return [].slice.call(root.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])'))
+        .filter(function(el){ return el.offsetParent !== null; });
+    }
+    function open(ov){
+      if(openOv) return;
+      lastFocus = document.activeElement;
+      ov.hidden = false;
+      document.body.classList.add("cs-lock");
+      requestAnimationFrame(function(){ ov.classList.add("on"); });
+      openOv = ov;
+      var f = focusables(ov);
+      if(f.length) f[f.length - 1].focus();
+      ov.scrollTop = 0;
+    }
+    function close(){
+      if(!openOv) return;
+      var ov = openOv;
+      openOv = null;
+      ov.classList.remove("on");
+      document.body.classList.remove("cs-lock");
+      window.setTimeout(function(){ if(!ov.classList.contains("on")) ov.hidden = true; }, 280);
+      if(lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    document.querySelectorAll(".cs-open").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var ov = document.getElementById("cs-" + btn.dataset.cs);
+        if(ov) open(ov);
+      });
+    });
+
+    document.addEventListener("click", function(e){
+      if(openOv && e.target === openOv) close();
+    });
+
+    document.addEventListener("click", function(e){
+      var t = e.target.closest ? e.target.closest("[data-cs-close]") : null;
+      if(t) close();
+    });
+
+    document.addEventListener("keydown", function(e){
+      if(!openOv) return;
+      if(e.key === "Escape"){ e.preventDefault(); close(); return; }
+      if(e.key !== "Tab") return;
+      var f = focusables(openOv);
+      if(!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    });
+  })();
+
   /* ============ PT / EN ============ */
   var LANG_KEY = "lq-lang";
   function setLang(lang){
@@ -998,5 +1156,6 @@ footer p{margin:0}
   try{ if(localStorage.getItem(LANG_KEY) === "en") setLang("en"); }catch(e){}
 })();
 </script>
+
 </body>
 </html>
