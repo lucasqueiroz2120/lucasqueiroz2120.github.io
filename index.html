@@ -177,6 +177,7 @@ h1 .hi{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .cursor path{fill:#fff}
 .cursor rect{fill:url(#gfill)}
 .cursor text{fill:#05040A;font-family:var(--mono);font-size:8px;font-weight:500}
+.anim-off,.anim-off *{animation-play-state:paused!important}
 .nlabel{fill:#5A5775;font-family:var(--mono);font-size:8px;letter-spacing:.06em}
 
 /* ================= MARQUEE ================= */
@@ -217,7 +218,7 @@ section{padding:96px 0;position:relative;scroll-margin-top:72px}
 .card:hover .thumb img{transform:scale(1.035)}
 .thumb .ph{position:absolute;inset:0;display:grid;place-content:center;gap:10px;text-align:center;color:var(--dim);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
 .thumb .ph svg{margin:0 auto;opacity:.45}
-.tag{position:absolute;bottom:12px;right:12px;background:rgba(7,6,13,.8);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:99px;padding:4px 10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);z-index:2}
+.tag{position:absolute;bottom:12px;right:12px;background:rgba(7,6,13,.92);border:1px solid var(--line);border-radius:99px;padding:4px 10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);z-index:2}
 .card-body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
 .card-body h3{font-family:var(--disp);font-size:21px;font-weight:600;letter-spacing:-.025em;margin:0}
 .card-body p{margin:0;color:var(--mut);font-size:14.5px;line-height:1.6;flex:1}
@@ -920,6 +921,7 @@ footer p{margin:0}
       if(!started){ started = true; rx = x; ry = y; root.classList.add("cur-on"); }
       root.classList.remove("cur-hide");
       place(dot, x, y);
+      acordaCursor();
 
       var isHot = !!(e.target && e.target.closest && e.target.closest(HOT));
       if(isHot !== hot){
@@ -934,12 +936,15 @@ footer p{margin:0}
     document.addEventListener("mouseleave",  function(){ root.classList.add("cur-hide"); });
     window.addEventListener("blur", function(){ root.classList.add("cur-hide"); });
 
-    (function loop(){
+    var rodando = false;
+    function loop(){
       rx += (x - rx) * ease;
       ry += (y - ry) * ease;
       place(ring, rx, ry);
+      if(Math.abs(x - rx) < 0.15 && Math.abs(y - ry) < 0.15){ rodando = false; return; }
       requestAnimationFrame(loop);
-    })();
+    }
+    function acordaCursor(){ if(!rodando){ rodando = true; requestAnimationFrame(loop); } }
   })();
 
   /* ============ FUNDO: partículas com parallax ============ */
@@ -950,13 +955,13 @@ footer p{margin:0}
         scrollY = 0, mx = 0, my = 0, tmx = 0, tmy = 0;
 
     function build(){
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       w = window.innerWidth; h = window.innerHeight;
       cv.width = w * dpr; cv.height = h * dpr;
       cv.style.width = w + "px"; cv.style.height = h + "px";
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      var n = Math.round(Math.min(90, Math.max(28, (w * h) / 20000)));
+      var n = Math.round(Math.min(48, Math.max(20, (w * h) / 42000)));
       parts = [];
       for(var i = 0; i < n; i++){
         var depth = 0.25 + Math.random() * 0.75;
@@ -973,7 +978,12 @@ footer p{margin:0}
       }
     }
 
-    function frame(){
+    var ultimo = 0;
+    function frame(ts){
+      requestAnimationFrame(frame);
+      if(document.hidden || scrollY > h * 1.25) return;
+      if(ts - ultimo < 32) return;
+      ultimo = ts;
       ctx.clearRect(0, 0, w, h);
       mx += (tmx - mx) * 0.045;
       my += (tmy - my) * 0.045;
@@ -996,7 +1006,6 @@ footer p{margin:0}
         ctx.fillStyle = "rgba(" + p.c + "," + p.a + ")";
         ctx.fill();
       }
-      requestAnimationFrame(frame);
     }
 
     build();
@@ -1007,6 +1016,26 @@ footer p{margin:0}
       tmy = (e.clientY / window.innerHeight - 0.5) * 2;
     }, {passive:true});
     requestAnimationFrame(frame);
+  })();
+
+  /* ============ pausa o que sai da tela ============ */
+  (function pausaForaDaTela(){
+    if(!("IntersectionObserver" in window)) return;
+    var alvos = [].slice.call(document.querySelectorAll(".viz-svg, .track"));
+    if(!alvos.length) return;
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        var el = e.target;
+        if(el.tagName.toLowerCase() === "svg" && el.pauseAnimations){
+          e.isIntersecting ? el.unpauseAnimations() : el.pauseAnimations();
+        }
+        el.classList.toggle("anim-off", !e.isIntersecting);
+      });
+    }, {rootMargin: "120px"});
+    alvos.forEach(function(el){ io.observe(el); });
+    document.addEventListener("visibilitychange", function(){
+      alvos.forEach(function(el){ el.classList.toggle("anim-off", document.hidden); });
+    });
   })();
 
   /* ============ ano ============ */
